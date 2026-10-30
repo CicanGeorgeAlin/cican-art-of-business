@@ -4,7 +4,31 @@
 
 Founded by **CICAN GEORGE ALIN**.
 
-CICAN ART OF BUSINESS creates bespoke illustrated experiences for businesses through permission-based visual discovery, original photography, line-art illustration and custom publications.
+CICAN ART OF BUSINESS develops bespoke illustrated experiences for businesses. Approved photographs of real business environments are transformed into original line art and custom colouring-book publications.
+
+## The customer experience
+
+A business becomes the inspiration for a creative keepsake:
+1. Discover the visual character of a real place.
+2. Request permission and agree photography boundaries.
+3. Photograph approved details using original photography.
+4. Transform selected images into printable black-and-white line art.
+5. Design a bespoke colouring-book experience.
+6. The client may offer the book to customers and families as a creative activity connected to their visit.
+
+Children can recognise and colour the place; adults can join in; families can share an activity and a memory. These are potential experience benefits, not guaranteed commercial outcomes.
+
+## The business relationship
+
+The concept gives businesses an additional way to welcome families, extend the visit into a take-home activity and create a more personal association with the place. Every project is tailored and subject to client approval.
+
+## Commercial model
+
+CICAN develops the agreed creative work, including photography, illustration and publication design. The client normally arranges and funds printing and distribution. Production management may be separately agreed. Scope, fees, approvals, usage rights, deadlines and production responsibilities are confirmed before commissioned work begins.
+
+## Permission and portfolio policy
+
+The website contains fictional visual demonstrations, not photographs of actual businesses or completed client projects. They do not represent partnerships, endorsements or client relationships. CICAN does not assume permission to enter premises, photograph private property, reproduce protected branding or publish private demonstrations. Public portfolio use of real client work requires separate approval.
 
 ## Website
 
@@ -12,52 +36,13 @@ CICAN ART OF BUSINESS creates bespoke illustrated experiences for businesses thr
 - Repository: https://github.com/CicanGeorgeAlin/cican-art-of-business
 - Hosting: GitHub Pages
 - Branch: `main`, root folder
+- Stack: semantic HTML, responsive CSS and vanilla JavaScript
 
-## The CICAN method
+## Verification and publishing
 
-1. Discover a suitable business and its visual story.
-2. Request permission for access and photography.
-3. Photograph agreed subjects, avoiding identifiable people and personal information by default.
-4. Transform selected photographs into original line art.
-5. Present a small, private demonstration to the appropriate business contact.
-6. If commissioned, agree scope, fees, permissions, intellectual-property licence and production responsibilities before delivery.
+A GitHub Actions workflow runs static site checks on pushes and pull requests. A successful workflow does not itself prove that GitHub Pages is enabled or that the public site has deployed. Verify deployment under **Settings → Pages**.
 
-## Services
-
-- Corporate visual discovery
-- Bespoke corporate colouring books
-- Illustrated publications and creative assets
-- Creative brand experiences
-
-Printing and distribution are normally arranged and funded by the client. Any production-management work is separately agreed.
-
-## Portfolio policy
-
-All public website visual studies are fictional conceptual demonstrations. They are not photographs of real businesses, client projects, partnerships or endorsements. Private business demonstrations are not published publicly without separate written approval.
-
-## Project principles
-
-- Permission before commercial photography on private premises.
-- No implied client relationships, endorsements or partnerships.
-- Original creative work and documented usage rights.
-- Respect for copyright, trademarks, privacy and applicable data-protection requirements.
-- No claims of guaranteed marketing outcomes.
-- Mobile-responsive, lightweight HTML, CSS and vanilla JavaScript.
-
-## Website files
-
-- `index.html` — website structure and content
-- `assets/css/style.css` — visual identity and responsive layout
-- `assets/js/main.js` — mobile navigation and progressive reveal effects
-- `assets/images/favicon.svg` — favicon
-- `robots.txt` — crawler instructions
-- `sitemap.xml` — sitemap
-
-## Publishing and verification
-
-GitHub Pages must be enabled under **Settings → Pages** with deployment from `main` and `/(root)`. A successful GitHub commit does not by itself prove that the site is deployed or live.
-
-A dedicated business email and enquiry form remain to be configured once the official contact address is supplied.
+A dedicated business email and enquiry form remain to be configured once the official contact address is established.
 
 ## Founder
 
