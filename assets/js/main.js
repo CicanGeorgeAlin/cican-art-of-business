@@ -1,51 +1,20 @@
 (() => {
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".primary-nav");
-
-  const closeMenu = () => {
-    if (!menuButton || !navigation) return;
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation");
-    navigation.classList.remove("is-open");
+  const button = document.querySelector(".menu");
+  const nav = document.querySelector(".topbar nav");
+  const close = () => {
+    if (!button || !nav) return;
+    nav.classList.remove("open");
+    button.setAttribute("aria-expanded","false");
+    button.textContent = "☰";
   };
-
-  if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-      navigation.classList.toggle("is-open", !isOpen);
+  if (button && nav) {
+    button.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(open));
+      button.textContent = open ? "×" : "☰";
     });
-    navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
-        closeMenu();
-        menuButton.focus();
-      }
-    });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 680) closeMenu();
-    });
-  }
-
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const revealTargets = document.querySelectorAll(
-    ".section-heading, .journey-card, .audience-grid article, .connection-points article, .business-types span, .method-grid article, .founder-grid, .contact-inner"
-  );
-
-  if (!reduceMotion && "IntersectionObserver" in window) {
-    revealTargets.forEach((element) => element.classList.add("reveal"));
-    const observer = new IntersectionObserver((entries, currentObserver) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          currentObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealTargets.forEach((element) => observer.observe(element));
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+    document.addEventListener("keydown", e => { if(e.key === "Escape") close(); });
+    window.addEventListener("resize", () => { if(window.innerWidth > 760) close(); });
   }
 })();
