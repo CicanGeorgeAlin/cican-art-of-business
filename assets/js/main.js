@@ -16,18 +16,13 @@
       menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
       navigation.classList.toggle("is-open", !isOpen);
     });
-
-    navigation.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-
+    navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
         closeMenu();
         menuButton.focus();
       }
     });
-
     window.addEventListener("resize", () => {
       if (window.innerWidth > 680) closeMenu();
     });
@@ -38,7 +33,7 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    ".section-heading, .concept-copy, .concept-visual, .study-card, .solution-item, .method-steps article, .founder-copy, .founder-mark, .proposal-copy, .contact-inner"
+    ".section-heading, .journey-card, .audience-grid article, .connection-points article, .business-types span, .method-grid article, .founder-grid, .contact-inner"
   );
 
   if (!reduceMotion && "IntersectionObserver" in window) {
@@ -51,7 +46,6 @@
         }
       });
     }, { threshold: 0.12 });
-
     revealTargets.forEach((element) => observer.observe(element));
   }
 })();
