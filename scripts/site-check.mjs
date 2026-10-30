@@ -32,8 +32,8 @@ check("Mobile navigation supports Escape", js.includes('event.key === "Escape"')
 check("Reveal animation targets current sections", js.includes(".journey-card") && js.includes(".method-grid article"));
 check("Canonical URL matches sitemap", html.includes('rel="canonical" href="https://cicangeorgealin.github.io/cican-art-of-business/"') && sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/"));
 check("Robots file points to sitemap", robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
-check("Fictional portfolio disclosure is present", /fictional visual demonstrations/.test(html) && /not photographs of an actual business, completed client work or an existing partnership/.test(html));
-check("Permission-first photography process is present", html.indexOf("Request permission") < html.indexOf("Photograph"));
+check("Concept illustrations are clearly disclosed", /fictional concept examples/.test(html) && /not completed client work or an existing business partnership/.test(html));
+check("Photography and brand use require prior agreement", /agree permission/.test(html) && /agreed with the business before work begins/.test(html));
 check("No named real-company example is embedded", !/IKEA|Tesco|McDonald/i.test(html));
 
 for (const result of checks) {
