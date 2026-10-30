@@ -247,3 +247,30 @@ button { font: inherit; }
   .visual-panel { height:190px; }
   .case-meta { flex-direction:column; gap:7px; }
 }
+
+/* CICAN strategy-aligned visual studies and method */
+.study-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.study-card { border:1px solid var(--line); background:#0b0b0b; }
+.study-art { min-height:235px; position:relative; display:grid; place-items:center; padding:25px; overflow:hidden; }
+.study-art svg { width:100%; max-width:320px; max-height:210px; color:#171717; background:#efeee7; padding:10px; }
+.study-interior { background:linear-gradient(145deg,#b9b7ae,#66665f); }
+.study-hospitality { background:linear-gradient(145deg,#c5c0b5,#77746d); }
+.study-retail { background:linear-gradient(145deg,#c9c8c0,#77766f); }
+.study-label { position:absolute; top:12px; left:13px; color:#111; font:8px var(--mono); letter-spacing:.1em; }
+.study-copy { padding:22px; }
+.study-copy h3 { margin:8px 0; font-size:19px; letter-spacing:-.04em; }
+.study-copy p:not(.eyebrow) { color:var(--muted); font-size:11px; line-height:1.8; min-height:42px; }
+.study-copy>span { color:var(--accent); font:7px var(--mono); letter-spacing:.06em; }
+.method-steps { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.method-steps article { min-height:190px; padding:23px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+.method-steps article>span { color:var(--accent); font:9px var(--mono); }
+.method-steps h3 { font-size:16px; margin:27px 0 9px; }
+.method-steps p { color:var(--muted); font-size:10px; line-height:1.9; margin:0; }
+.permission-note { margin-top:25px; padding:20px 22px; border:1px solid rgba(216,255,85,.35); color:var(--muted); font-size:11px; line-height:1.9; }
+.permission-note strong { color:var(--white); }
+.contact-panel { display:flex; flex-direction:column; gap:9px; align-items:center; padding:25px 35px; margin-top:8px; border:1px solid var(--line); min-width:min(100%,360px); }
+.contact-panel strong { font-size:13px; letter-spacing:.08em; }
+.contact-panel span { color:var(--muted); font:9px var(--mono); }
+.contact-panel a { margin-top:9px; color:var(--accent); font-size:11px; text-decoration:underline; text-underline-offset:4px; }
+@media (max-width: 800px) { .study-grid { grid-template-columns:1fr 1fr; } .method-steps { grid-template-columns:1fr 1fr; } }
+@media (max-width: 560px) { .study-grid,.method-steps { grid-template-columns:1fr; } .study-art { min-height:220px; } .method-steps article { min-height:150px; } }
