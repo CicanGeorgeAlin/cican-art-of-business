@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml
