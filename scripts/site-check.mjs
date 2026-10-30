@@ -29,10 +29,10 @@ check("CSS braces are balanced", (css.match(/{/g) ?? []).length === (css.match(/
 check("Mobile responsive breakpoints exist", /max-width:\s*680px/.test(css) && /max-width:\s*560px/.test(css));
 check("Reduced-motion preference is respected", css.includes("prefers-reduced-motion: reduce") && js.includes("prefers-reduced-motion: reduce"));
 check("Mobile navigation supports Escape", js.includes('event.key === "Escape"'));
-check("Reveal animation targets current sections", js.includes(".study-card") && js.includes(".method-steps article"));
+check("Reveal animation targets current sections", js.includes(".journey-card") && js.includes(".method-grid article"));
 check("Canonical URL matches sitemap", html.includes('rel="canonical" href="https://cicangeorgealin.github.io/cican-art-of-business/"') && sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/"));
 check("Robots file points to sitemap", robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
-check("Fictional portfolio disclosure is present", /Fictional, independent concept studies/.test(html) && /not photographs of real businesses, client work, partnerships or endorsements/.test(html));
+check("Fictional portfolio disclosure is present", /fictional visual demonstrations/.test(html) && /not photographs of an actual business, completed client work or an existing partnership/.test(html));
 check("Permission-first photography process is present", html.indexOf("Request permission") < html.indexOf("Photograph"));
 check("No named real-company example is embedded", !/IKEA|Tesco|McDonald/i.test(html));
 
