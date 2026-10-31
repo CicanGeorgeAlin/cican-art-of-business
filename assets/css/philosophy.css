@@ -1,0 +1,128 @@
+/* Philosophy page — editorial archive layout */
+.philosophy-page{--content:1240px}
+.philosophy-page .topbar nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:3px;text-underline-offset:7px}
+.philo-hero{position:relative;min-height:690px;max-width:1600px;margin:auto;padding:84px max(8vw,calc((100vw - var(--content))/2)) 110px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;overflow:hidden}
+.philo-hero-copy{position:relative;z-index:2;max-width:590px}
+.philo-hero h1{font-size:clamp(86px,12vw,158px);line-height:.76;letter-spacing:-.075em;margin:0 0 32px;font-weight:800}
+.philo-hero h1 i,.philo-statement h2 i,.principles-intro h2 i,.group-heading h3 i,.future-question h2 i,.philo-close h2 i{font-family:var(--serif);font-weight:400;color:var(--orange);letter-spacing:-.045em}
+.philo-lede{font-size:20px;line-height:1.45;margin:0 0 18px}
+.philo-intro{font-size:14px;line-height:1.85;max-width:440px;color:#625c69;margin:0 0 30px}
+.philo-hero-art{position:relative;min-height:490px;display:grid;place-items:center}
+.orbit{position:absolute;border:1px solid #241f3630;border-radius:50%;width:430px;height:430px}
+.orbit-one{transform:rotate(-28deg) scaleY(.64);border-style:dashed}
+.orbit-two{width:340px;height:340px;transform:rotate(36deg) scaleY(.72)}
+.archive-core{position:relative;z-index:2;width:220px;height:250px;background:var(--ink);color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:15px 15px 0 var(--orange);transform:rotate(-5deg);padding:24px}
+.archive-core span{font-size:10px;letter-spacing:.24em;font-weight:800;color:var(--yellow);margin-bottom:22px}
+.archive-core b{font-size:37px;line-height:.85;letter-spacing:-.05em}
+.archive-core small{font-size:8px;letter-spacing:.14em;margin-top:22px;color:#d8d2e5}
+.archive-tile{position:absolute;z-index:3;width:138px;height:112px;padding:14px;display:flex;flex-direction:column;box-shadow:5px 6px 0 var(--ink);border:1px solid var(--ink)}
+.archive-tile span{font-size:9px;letter-spacing:.15em;font-weight:800}
+.archive-tile b{font-size:34px;line-height:1;margin:auto 0 2px;letter-spacing:-.06em}
+.archive-tile small{font-size:7px;letter-spacing:.1em;font-weight:700}
+.tile-place{background:var(--yellow);top:7%;left:2%;transform:rotate(-9deg)}
+.tile-people{background:var(--pink);right:0;top:23%;transform:rotate(8deg)}
+.tile-time{background:var(--mint);left:8%;bottom:8%;transform:rotate(7deg)}
+.philo-star{position:absolute;right:7%;bottom:4%;font-size:72px;color:var(--blue);transform:rotate(12deg)}
+.hero-bottom-note{position:absolute;bottom:34px;left:8vw;right:8vw;display:flex;justify-content:center;align-items:center;gap:18px;font-size:9px;font-weight:800;letter-spacing:.2em;color:#797283}
+.hero-bottom-note i{font-style:normal;color:var(--orange);font-size:13px}
+.philo-statement{background:var(--blue);color:white;padding:85px max(8vw,calc((100vw - var(--content))/2));display:grid;grid-template-columns:100px minmax(0,760px);gap:24px;align-items:start}
+.statement-mark{font-family:var(--serif);font-size:150px;line-height:.65;color:var(--yellow)}
+.philo-statement .kicker{color:var(--yellow);margin-bottom:20px}
+.philo-statement h2{font-size:clamp(42px,6vw,76px);line-height:.95;letter-spacing:-.055em;margin:0 0 25px}
+.philo-statement h2 i{color:var(--yellow)}
+.philo-statement p:last-child{font-size:16px;line-height:1.8;max-width:650px;color:#e7e5ff;margin:0}
+.principles-intro{padding:100px max(8vw,calc((100vw - var(--content))/2)) 65px;display:flex;align-items:end;justify-content:space-between;gap:40px}
+.principles-intro .kicker{color:var(--blue)}
+.principles-intro h2{font-size:clamp(48px,7vw,88px);line-height:.86;letter-spacing:-.06em;margin:0}
+.principles-intro h2 i{color:var(--orange)}
+.principles-intro>p{max-width:330px;font-size:14px;line-height:1.8;color:#625c69;margin:0 0 5px}
+.principle-groups{max-width:var(--content);margin:auto;padding:0 0 90px}
+.principle-group{padding:58px 0 64px;border-top:1px solid #241f3625}
+.group-heading{display:grid;grid-template-columns:120px 1fr minmax(220px,330px);gap:22px;align-items:start;margin-bottom:28px}
+.group-heading>span{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--blue);padding-top:12px}
+.group-heading h3{font-size:clamp(28px,3.5vw,44px);line-height:.95;letter-spacing:-.05em;margin:0}
+.group-heading h3 i{color:var(--orange)}
+.group-heading>p{font-size:12px;line-height:1.7;color:#716b77;margin:2px 0 0}
+.principle-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.principle-card{min-height:220px;padding:23px 20px 22px;background:#fffaf1;border:1px solid #241f3618;position:relative;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.principle-card:hover{transform:translateY(-4px);box-shadow:5px 6px 0 #241f3618}
+.principle-card>span{font-size:10px;font-weight:800;letter-spacing:.15em;color:var(--blue);margin-bottom:24px}
+.principle-card h4{font-size:18px;line-height:1.08;letter-spacing:-.035em;margin:0 0 13px}
+.principle-card p{font-size:11px;line-height:1.75;color:#6e6874;margin:0}
+.group-identity .principle-card:nth-child(4n+1){background:#fff1c8}
+.group-humanity .principle-card:nth-child(4n+2){background:#fbe2e9}
+.group-records .principle-card:nth-child(4n+3){background:#e4e5ff}
+.group-place .principle-card:nth-child(4n+4){background:#e1f2e9}
+.group-discovery .principle-card:nth-child(4n+1){background:#fff1c8}
+.group-responsibility .principle-card:nth-child(4n+2){background:#fbe2e9}
+.future-question{background:var(--mint);padding:95px max(8vw,calc((100vw - 1000px)/2));text-align:center}
+.future-question .kicker{color:var(--blue)}
+.future-question h2{font-size:clamp(42px,6.5vw,78px);line-height:.94;letter-spacing:-.055em;margin:0 auto 25px;max-width:1000px}
+.future-question h2 i{color:var(--blue)}
+.future-question>p:last-child{font-size:14px;line-height:1.8;max-width:600px;margin:0 auto;color:#4c5960}
+.philo-close{position:relative;overflow:hidden;background:var(--orange);padding:105px 7vw 78px;text-align:center}
+.philo-close>*{position:relative;z-index:1}
+.philo-close .kicker{letter-spacing:.2em}
+.philo-close h2{font-size:clamp(85px,13vw,160px);line-height:.75;letter-spacing:-.075em;margin:0 0 32px}
+.philo-close h2 i{color:white}
+.philo-close>p:not(.kicker){font-size:15px;margin:0 0 28px}
+.philo-close .dark{background:var(--ink);color:white;box-shadow:5px 5px 0 white}
+.founder-line{font-size:9px;letter-spacing:.17em;margin-top:54px}
+.founder-line strong{margin-left:8px}
+.close-decoration{position:absolute!important;z-index:0!important;right:8%;top:5%;font-size:170px;color:#ffffff24}
+.philosophy-page footer{padding-inline:max(6vw,calc((100vw - var(--content))/2))}
+@media(max-width:900px){
+ .philo-hero{padding:70px 7vw 100px;gap:2vw;min-height:620px}
+ .philo-hero-art{min-height:410px}
+ .orbit{width:340px;height:340px}
+ .orbit-two{width:275px;height:275px}
+ .archive-core{width:185px;height:215px}
+ .archive-core b{font-size:31px}
+ .archive-tile{width:118px;height:96px}
+ .principle-groups{padding-inline:6vw}
+ .principle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .principle-card{min-height:185px}
+ .group-heading{grid-template-columns:80px 1fr}
+ .group-heading>p{grid-column:2}
+}
+@media(max-width:650px){
+ .philo-hero{grid-template-columns:1fr;padding:60px 7vw 90px;gap:12px}
+ .philo-hero h1{font-size:clamp(84px,20vw,132px)}
+ .philo-hero-art{min-height:370px;margin-top:4px}
+ .orbit{width:315px;height:315px}
+ .orbit-two{width:250px;height:250px}
+ .archive-core{width:170px;height:195px}
+ .archive-core b{font-size:29px}
+ .archive-tile{width:108px;height:88px;padding:11px}
+ .tile-place{left:0;top:3%}
+ .tile-people{right:0;top:19%}
+ .tile-time{left:2%;bottom:4%}
+ .hero-bottom-note{left:6vw;right:6vw;bottom:28px;gap:10px;font-size:8px}
+ .philo-statement{padding:65px 7vw;grid-template-columns:42px 1fr;gap:12px}
+ .statement-mark{font-size:80px}
+ .philo-statement h2{font-size:clamp(39px,10vw,58px)}
+ .philo-statement p:last-child{font-size:14px}
+ .principles-intro{padding:75px 7vw 48px;display:block}
+ .principles-intro>p{margin-top:25px}
+ .principle-groups{padding-inline:7vw;padding-bottom:60px}
+ .principle-group{padding:42px 0 48px}
+ .group-heading{grid-template-columns:1fr;gap:12px;margin-bottom:22px}
+ .group-heading>span{padding:0}
+ .group-heading>p{grid-column:auto;max-width:400px}
+ .principle-grid{grid-template-columns:1fr 1fr;gap:9px}
+ .principle-card{padding:17px 14px;min-height:0}
+ .principle-card>span{margin-bottom:18px}
+ .principle-card h4{font-size:16px}
+ .principle-card p{font-size:10px}
+ .future-question{padding:72px 7vw}
+ .future-question h2{font-size:clamp(40px,10vw,60px)}
+ .philo-close{padding:85px 7vw 65px}
+ .philo-close h2{font-size:clamp(85px,20vw,125px)}
+}
+@media(max-width:380px){
+ .principle-grid{grid-template-columns:1fr}
+ .principle-card{padding:20px;min-height:0}
+ .philo-hero-art{transform:scale(.94);transform-origin:center}
+ .hero-bottom-note{gap:7px;font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){.principle-card{transition:none}}
