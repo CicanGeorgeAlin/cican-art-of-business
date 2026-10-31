@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">CICAN Art of Business — Your Business. Their Masterpiece.</title>
+<desc id="desc">A bespoke colouring-book experience for your customers and their families, transforming real businesses into original line art.</desc>
+<rect width="1200" height="630" fill="#fffaf1"/>
+<circle cx="1125" cy="28" r="185" fill="#ffd84d"/><circle cx="15" cy="620" r="115" fill="#ffb9d2"/>
+<rect x="58" y="45" width="222" height="60" rx="18" fill="#7048ff"/>
+<text x="78" y="91" fill="#fff" font-family="Arial,sans-serif" font-size="43" font-weight="800" letter-spacing="-3">CICAN</text>
+<text x="300" y="83" fill="#17132b" font-family="Arial,sans-serif" font-size="24" font-weight="800">ART OF BUSINESS</text>
+<text x="58" y="198" fill="#17132b" font-family="Arial,sans-serif" font-size="66" font-weight="800" letter-spacing="-4">YOUR BUSINESS.</text>
+<text x="58" y="260" fill="#7048ff" font-family="Georgia,serif" font-size="58" font-style="italic">THEIR MASTERPIECE.</text>
+<text x="62" y="310" fill="#6d687b" font-family="Arial,sans-serif" font-size="21">A bespoke colouring-book experience for your customers</text>
+<text x="62" y="340" fill="#6d687b" font-family="Arial,sans-serif" font-size="21">and their families.</text>
+<g font-family="Arial,sans-serif" fill="#17132b">
+<rect x="58" y="390" width="322" height="165" rx="22" fill="#fff" stroke="#17132b" stroke-width="2"/>
+<rect x="73" y="405" width="292" height="90" rx="15" fill="#b8f2df"/>
+<circle cx="119" cy="450" r="22" fill="#7048ff"/><text x="107" y="456" font-size="14" font-weight="700" fill="#fff">01</text>
+<path d="M180 480V430h84v50M171 430l12-20h68l13 20zM222 430v50" fill="none" stroke="#17132b" stroke-width="4"/>
+<text x="219" y="530" font-size="18" font-weight="800" text-anchor="middle">YOUR BUSINESS</text>
+<rect x="439" y="390" width="322" height="165" rx="22" fill="#fff" stroke="#17132b" stroke-width="2"/>
+<rect x="454" y="405" width="292" height="90" rx="15" fill="#ffd84d"/>
+<circle cx="500" cy="450" r="22" fill="#ff704d"/><text x="488" y="456" font-size="14" font-weight="700" fill="#fff">02</text>
+<rect x="574" y="414" width="70" height="70" rx="5" fill="#fff" stroke="#17132b" stroke-width="3"/>
+<path d="M587 434h44m-44 14h44m-44 14h32" stroke="#17132b" stroke-width="3"/>
+<path d="M660 475l31-49" stroke="#ff704d" stroke-width="8"/><path d="M691 426l-2 15-11-8z" fill="#17132b"/>
+<text x="600" y="530" font-size="18" font-weight="800" text-anchor="middle">ORIGINAL LINE ART</text>
+<rect x="820" y="390" width="322" height="165" rx="22" fill="#fff" stroke="#17132b" stroke-width="2"/>
+<rect x="835" y="405" width="292" height="90" rx="15" fill="#ffb9d2"/>
+<circle cx="881" cy="450" r="22" fill="#7048ff"/><text x="869" y="456" font-size="14" font-weight="700" fill="#fff">03</text>
+<rect x="1000" y="412" width="64" height="76" rx="5" fill="#fff" stroke="#17132b" stroke-width="3"/>
+<rect x="1008" y="420" width="48" height="60" fill="none" stroke="#7048ff" stroke-width="2"/>
+<text x="1032" y="445" font-size="9" font-weight="800" text-anchor="middle">COLOUR</text><text x="1032" y="458" font-size="9" font-weight="800" text-anchor="middle">YOUR</text><text x="1032" y="471" font-size="9" font-weight="800" text-anchor="middle">WORLD</text>
+<text x="981" y="530" font-size="18" font-weight="800" text-anchor="middle">A BOOK TO SHARE</text>
+</g>
+<rect x="58" y="574" width="1084" height="38" rx="18" fill="#17132b"/>
+<text x="82" y="599" fill="#fff" font-family="monospace" font-size="13" letter-spacing=".3">PHOTOGRAPHY  ·  ORIGINAL LINE ART  ·  BESPOKE COLOURING BOOKS</text>
+<text x="1000" y="599" fill="#ffd84d" font-family="Arial,sans-serif" font-size="14" font-weight="800">DISCOVER ↗</text>
+</svg>
