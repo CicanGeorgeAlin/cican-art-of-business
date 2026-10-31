@@ -30,6 +30,8 @@ check("Responsive layouts cover tablet and mobile", css.includes("@media(max-wid
 check("Reduced-motion preferences are respected", css.includes("prefers-reduced-motion:reduce"));
 check("Mobile navigation has accessible open, close and Escape behavior", js.includes('querySelector(".menu")') && js.includes('querySelector(".site-nav")') && js.includes('event.key === "Escape"') && js.includes('aria-label", open ? "Close navigation"'));
 check("Core business sections are present", ["id=" + '"concept"', "id=" + '"services"', "id=" + '"process"', "id=" + '"contact"'].every(value => html.includes(value)));
+check("Concept gallery is discoverable from primary navigation", html.includes('<a href="#concept-gallery">CONCEPT GALLERY</a>') && html.includes('id="concept-gallery"'));
+check("Three original concept examples are present and labelled", ["THE NEIGHBOURHOOD CAFÉ", "THE INDEPENDENT SHOP", "THE FAMILY VISIT"].every(label => html.includes(label)) && html.includes("ALL THREE EXAMPLES ARE ORIGINAL CONCEPT DEMONSTRATIONS"));
 check("Concept artwork is clearly labelled as a demonstration", html.includes("VISUAL DEMONSTRATION") && html.includes("NOT A COMPLETED CLIENT COMMISSION"));
 check("Commercial and permission boundaries are explained", html.includes("permissions") && html.includes("usage rights") && html.includes("Printing and distribution are normally arranged"));
 check("Philosophy page is linked and sitemap remains aligned", html.includes('href="philosophy.html"') && sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/") && robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
