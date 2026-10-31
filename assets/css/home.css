@@ -123,3 +123,14 @@ body{background-image:radial-gradient(ellipse at 78% 8%,rgba(183,210,111,.055),t
 @media(max-width:1000px){.gallery-grid{gap:12px}.gallery-art{height:270px}.gallery-copy{padding:18px 14px;min-height:145px}.gallery-meta{padding-inline:14px;font-size:6px}}
 @media(max-width:760px){.gallery-heading{grid-template-columns:1fr;gap:22px;margin:35px 0}.gallery-heading h2{font-size:clamp(42px,9vw,64px)}.gallery-heading>p{max-width:520px}.gallery-grid{grid-template-columns:1fr;gap:18px}.gallery-art{height:clamp(260px,68vw,360px)}.gallery-copy{min-height:0;padding:20px}.gallery-copy h3{font-size:12px}.gallery-copy p{font-size:12px;max-width:460px}.gallery-meta{font-size:7px;padding:13px 20px}.gallery-card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.gallery-card,.gallery-arrow{transition:none!important}}
+
+
+/* Direct founder contact details */
+.contact-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:650px;margin:8px 0 24px}
+.contact-detail{min-width:0;display:grid;grid-template-columns:1fr auto;gap:9px 12px;align-items:center;padding:17px 18px;border:1px solid var(--hairline);background:rgba(255,255,255,.025);color:var(--white);text-decoration:none;transition:border-color .2s ease,background .2s ease}
+.contact-detail:hover{border-color:var(--accent);background:rgba(215,245,106,.045)}
+.contact-detail>span:first-child{grid-column:1/-1;color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.16em}
+.contact-detail strong{min-width:0;overflow-wrap:anywhere;font-size:clamp(12px,1.5vw,15px);font-weight:600;letter-spacing:.01em}
+.contact-detail>span:last-child{color:var(--accent);font-size:17px}
+.contact-section .contact-details+.button{margin-top:0}
+@media(max-width:430px){.contact-details{grid-template-columns:1fr}.contact-detail{padding:15px}}
