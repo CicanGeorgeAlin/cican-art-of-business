@@ -34,6 +34,7 @@ check("Concept gallery is discoverable from primary navigation", html.includes('
 check("Three original concept examples are present and labelled", ["THE NEIGHBOURHOOD CAFÉ", "THE INDEPENDENT SHOP", "THE FAMILY VISIT"].every(label => html.includes(label)) && html.includes("ALL THREE EXAMPLES ARE ORIGINAL CONCEPT DEMONSTRATIONS"));
 check("Concept artwork is clearly labelled as a demonstration", html.includes("VISUAL DEMONSTRATION") && html.includes("NOT A COMPLETED CLIENT COMMISSION"));
 check("Commercial and permission boundaries are explained", html.includes("permissions") && html.includes("usage rights") && html.includes("Printing and distribution are normally arranged"));
+check("Founder email and phone are visible and actionable", html.includes("George.cican@gmail.com") && html.includes("mailto:George.cican@gmail.com") && html.includes("0894 872112") && html.includes("tel:+353894872112"));
 check("Philosophy page is linked and sitemap remains aligned", html.includes('href="philosophy.html"') && sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/") && robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
 
 for (const item of checks) console.log((item.passed ? "PASS" : "FAIL") + " — " + item.name);
