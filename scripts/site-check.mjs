@@ -28,7 +28,8 @@ check("Mobile navigation supports open, close and Escape", js.includes('querySel
 check("Homepage is concise and focused", sectionCount === 6 && ["id=\"idea\"", "id=\"benefit\"", "id=\"how\"", "id=\"contact\""].every((id) => html.includes(id)));
 check("Original concept artwork is clearly labelled", html.includes("fictional concept examples") && html.includes("not completed client work"));
 check("Photography permission is explicit", html.includes("Photography, access, brand use and publication are agreed"));
-check("Founder email and phone are actionable", html.includes("George.cican@gmail.com") && html.includes("mailto:George.cican@gmail.com") && html.includes("0894 872112") && html.includes("tel:+353894872112"));
+check("Founder email and phone are actionable", html.includes("george.cican@gmail.com") && html.includes("mailto:george.cican@gmail.com") && !html.includes("George.cican@gmail.com") && html.includes("0894 872112") && html.includes("tel:+353894872112"));
+check("Typography system and mobile type scale are defined", css.includes("Space Grotesk") && css.includes("DM Serif Display") && /font-size:clamp\(3\.15rem,12\.4vw,5rem\)/.test(css));
 check("Sitemap and robots point to the live website", sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/") && robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
 for (const item of checks) console.log((item.passed ? "PASS" : "FAIL") + " — " + item.name);
 const failed = checks.filter((item) => !item.passed);
