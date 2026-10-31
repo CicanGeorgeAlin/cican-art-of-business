@@ -76,3 +76,9 @@ body{background-image:radial-gradient(ellipse at 78% 8%,rgba(183,210,111,.055),t
 @media(prefers-reduced-motion:reduce){
  .art-panel,.service-item,.service-mark,.site-nav a:after{transition:none!important}
 }
+
+/* Motion is progressively enhanced: content remains visible without JavaScript. */
+@media(prefers-reduced-motion:no-preference){
+ body.reveal-ready main>section:not(.hero){opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+ body.reveal-ready main>section.is-visible{opacity:1;transform:translateY(0)}
+}
