@@ -18,7 +18,7 @@ const sectionCount = [...html.matchAll(/<section\b/g)].length;
 check("HTML5 document, title and language", /^<!doctype html>/i.test(html.trim()) && /<title>CICAN ART OF BUSINESS/.test(html) && /<html lang="en">/.test(html));
 check("SEO description, canonical and social metadata", /name="description"/.test(html) && /rel="canonical"/.test(html) && /property="og:title"/.test(html));
 check("Open Graph image, dimensions, alt text and Twitter large card", /property="og:image"/.test(html) && /og:image:width" content="1200"/.test(html) && /og:image:height" content="630"/.test(html) && /og:image:alt/.test(html) && /twitter:card" content="summary_large_image"/.test(html));
-check("Social preview image file exists and has correct dimensions", existsSync("assets/images/social-preview.svg") && /width="1200" height="630"/.test(read("assets/images/social-preview.svg")));
+check("Published social preview uses the founder JPEG and 1200×630 metadata", existsSync("assets/cican-art-of-business-social-preview.jpg") && /og:image:type" content="image\\/jpeg"/.test(html) && /og:image" content="https:\/\/cicangeorgealin\\.github\\.io\/cican-art-of-business\/assets\/cican-art-of-business-social-preview\\.jpg"/.test(html) && /og:image:width" content="1200"/.test(html) && /og:image:height" content="630"/.test(html) && /twitter:image" content="https:\/\/cicangeorgealin\\.github\\.io\/cican-art-of-business\/assets\/cican-art-of-business-social-preview\\.jpg"/.test(html));
 check("Unique IDs and all in-page links resolve", duplicateIds.length === 0 && missingAnchors.length === 0);
 check("All referenced local assets exist", missingAssets.length === 0);
 check("External links use safe target attributes", unsafeLinks.length === 0);
