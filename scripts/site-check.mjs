@@ -1,30 +1,46 @@
 import { readFileSync, existsSync } from "node:fs";
-const read = path => readFileSync(path,"utf8");
-const html=read("index.html"), css=read("assets/css/style.css"), js=read("assets/js/main.js"), sitemap=read("sitemap.xml"), robots=read("robots.txt");
-const checks=[];
-const check=(name,ok)=>checks.push({name,passed:Boolean(ok)});
-const ids=[...html.matchAll(/id="([^"]+)"/g)].map(x=>x[1]);
-const hrefs=[...html.matchAll(/href="#([^"]+)"/g)].map(x=>x[1]);
-const duplicateIds=ids.filter((id,i)=>ids.indexOf(id)!==i);
-const missingAnchors=[...new Set(hrefs.filter(x=>!ids.includes(x)))];
-const localAssets=[...html.matchAll(/(?:src|href)="(assets\/[^"]+)"/g)].map(x=>x[1]);
-const missingAssets=localAssets.filter(x=>!existsSync(x));
-const unsafe=[...html.matchAll(/<a[^>]*target="_blank"[^>]*>/g)].map(x=>x[0]).filter(x=>!x.includes("noopener"));
-check("HTML document and title",html.trim().startsWith("<!doctype html>")&&html.includes("<title>CICAN ART OF BUSINESS</title>"));
-check("Description and canonical URL",html.includes('name="description"')&&html.includes('rel="canonical"'));
-check("Unique IDs and valid in-page links",!duplicateIds.length&&!missingAnchors.length);
-check("All local assets exist",!missingAssets.length);
-check("Safe external links",!unsafe.length);
-check("CSS braces balanced",(css.match(/{/g)||[]).length===(css.match(/}/g)||[]).length);
-check("Responsive mobile layout",css.includes("max-width:760px")&&css.includes("max-width:390px"));
-check("Reduced motion supported",css.includes("prefers-reduced-motion:reduce"));
-check("Mobile menu wired to visible controls",js.includes('querySelector(".menu")')&&js.includes('querySelector(".topbar nav")')&&js.includes('e.key === "Escape"'));
-check("Visual transformation and book sections",html.includes('id="transformation"')&&html.includes('class="book-section section"'));
-check("Sitemap and robots remain aligned",sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/")&&robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
-check("Typography uses readable font pairing and spacing",html.includes("family=Outfit")&&css.includes("--sans:Outfit,Arial,sans-serif")&&css.includes("--serif:'DM Serif Display'")&&!css.includes("letter-spacing:-.095em"));
-check("Small labels meet improved size rules",css.includes(".kicker{font-size:11px")&&css.includes("font-size:11px;letter-spacing:.12em;font-weight:800"));
-check("Homepage copy proofread",html.includes("it colourful.")&&html.includes("A REAL PLACE. A NEW WAY TO SEE IT."));
-for(const x of checks) console.log((x.passed?"PASS":"FAIL")+" — "+x.name);
-const failed=checks.filter(x=>!x.passed);
-console.log("\n"+(checks.length-failed.length)+"/"+checks.length+" checks passed.");
-if(failed.length){if(duplicateIds.length)console.error("Duplicate IDs",duplicateIds);if(missingAnchors.length)console.error("Missing anchors",missingAnchors);if(missingAssets.length)console.error("Missing assets",missingAssets);if(unsafe.length)console.error("Unsafe links",unsafe);process.exitCode=1;}
+
+const read = path => readFileSync(path, "utf8");
+const html = read("index.html");
+const css = read("assets/css/home.css");
+const js = read("assets/js/main.js");
+const sitemap = read("sitemap.xml");
+const robots = read("robots.txt");
+
+const checks = [];
+const check = (name, ok) => checks.push({ name, passed: Boolean(ok) });
+const ids = [...html.matchAll(/id="([^"]+)"/g)].map(match => match[1]);
+const anchors = [...html.matchAll(/href="#([^"]+)"/g)].map(match => match[1]);
+const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
+const missingAnchors = [...new Set(anchors.filter(id => !ids.includes(id)))];
+const localFiles = [...html.matchAll(/(?:src|href)="((?:assets\/|philosophy\.html)[^"]*)"/g)].map(match => match[1]);
+const missingFiles = localFiles.filter(path => !existsSync(path));
+const unsafeLinks = [...html.matchAll(/<a[^>]*target="_blank"[^>]*>/g)]
+  .map(match => match[0])
+  .filter(tag => !tag.includes("noopener") || !tag.includes("noreferrer"));
+const bracesBalanced = (css.match(/{/g) || []).length === (css.match(/}/g) || []).length;
+
+check("HTML document, title and language", html.trim().startsWith("<!doctype html>") && html.includes("<title>CICAN ART OF BUSINESS") && html.includes('<html lang="en">'));
+check("SEO description, canonical and social metadata", html.includes('name="description"') && html.includes('rel="canonical"') && html.includes('property="og:title"'));
+check("Unique IDs and valid in-page navigation", duplicateIds.length === 0 && missingAnchors.length === 0);
+check("All referenced local files exist", missingFiles.length === 0);
+check("External links use safe target attributes", unsafeLinks.length === 0);
+check("Homepage stylesheet braces are balanced", bracesBalanced);
+check("Responsive layouts cover tablet and mobile", css.includes("@media(max-width:1000px)") && css.includes("@media(max-width:760px)") && css.includes("@media(max-width:430px)"));
+check("Reduced-motion preferences are respected", css.includes("prefers-reduced-motion:reduce"));
+check("Mobile navigation has accessible open, close and Escape behavior", js.includes('querySelector(".menu")') && js.includes('querySelector(".site-nav")') && js.includes('event.key === "Escape"') && js.includes('aria-label", open ? "Close navigation"'));
+check("Core business sections are present", ["id=" + '"concept"', "id=" + '"services"', "id=" + '"process"', "id=" + '"contact"'].every(value => html.includes(value)));
+check("Concept artwork is clearly labelled as a demonstration", html.includes("VISUAL DEMONSTRATION") && html.includes("NOT A COMPLETED CLIENT COMMISSION"));
+check("Commercial and permission boundaries are explained", html.includes("permissions") && html.includes("usage rights") && html.includes("Printing and distribution are normally arranged"));
+check("Philosophy page is linked and sitemap remains aligned", html.includes('href="philosophy.html"') && sitemap.includes("https://cicangeorgealin.github.io/cican-art-of-business/") && robots.includes("Sitemap: https://cicangeorgealin.github.io/cican-art-of-business/sitemap.xml"));
+
+for (const item of checks) console.log((item.passed ? "PASS" : "FAIL") + " — " + item.name);
+const failed = checks.filter(item => !item.passed);
+console.log("\n" + (checks.length - failed.length) + "/" + checks.length + " checks passed.");
+if (failed.length) {
+  if (duplicateIds.length) console.error("Duplicate IDs:", duplicateIds);
+  if (missingAnchors.length) console.error("Missing anchors:", missingAnchors);
+  if (missingFiles.length) console.error("Missing local files:", missingFiles);
+  if (unsafeLinks.length) console.error("Unsafe external links:", unsafeLinks);
+  process.exitCode = 1;
+}
