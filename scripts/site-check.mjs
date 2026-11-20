@@ -15,6 +15,7 @@ const localAssets = [...html.matchAll(/(?:src|href)="((?:assets\/)[^"]+)"/g)].ma
 const missingAssets = localAssets.filter((path) => !existsSync(path));
 const unsafeLinks = [...html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)].map((match) => match[0]).filter((tag) => !/rel="[^"]*noopener[^"]*"/.test(tag));
 const sectionCount = [...html.matchAll(/<section\b/g)].length;
+check("Brand tagline is consistent in the hero, page title and footer", html.includes("<h1>SEE BUSINESS<br><em>DIFFERENTLY.</em></h1>") && html.includes("<title>CICAN ART OF BUSINESS — See Business Differently.</title>") && html.includes("<p>SEE BUSINESS DIFFERENTLY.</p>"));
 check("HTML5 document, title and language", /^<!doctype html>/i.test(html.trim()) && /<title>CICAN ART OF BUSINESS/.test(html) && /<html lang="en">/.test(html));
 check("SEO description, canonical and social metadata", /name="description"/.test(html) && /rel="canonical"/.test(html) && /property="og:title"/.test(html));
 check("Open Graph image, dimensions, alt text and Twitter large card", /property="og:image"/.test(html) && /og:image:width" content="1200"/.test(html) && /og:image:height" content="630"/.test(html) && /og:image:alt/.test(html) && /twitter:card" content="summary_large_image"/.test(html));
